@@ -1,0 +1,51 @@
+Create a Role
+http://localhost:3000/admin/create-role
+{
+    "roleName": "operator"
+}
+
+
+Create a Policy
+http://localhost:3000/admin/create-policy
+{
+    "roleName": "operator",
+    "module": "marriage",
+    "action": "write"
+}
+
+
+Create a User 
+http://localhost:3000/admin/create-user
+{
+    "username": "john_doe",
+    "password": "securepassword",
+    "role": "operator"
+}
+
+Assign a Role to a User
+http://localhost:3000/admin/assign-role
+{
+    "username": "john_doe",
+    "roleName": "operator"
+}
+
+
+Assign a Policy to a Role
+http://localhost:3000/admin/assign-policy
+{
+    "roleName": "operator",
+    "module": "birth",
+    "action": "read"
+}
+
+
+Get All Users
+http://localhost:3000/users/list
+GET
+[
+    {
+        "id": 1,
+        "username": "john_doe",
+        "role": "operator"
+    }
+]
